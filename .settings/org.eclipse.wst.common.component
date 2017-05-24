@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Spring-mvc-validate-RequestBody">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Model Sources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Dao Sources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Common Sources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Controller Sources"/>
+        <property name="java-output-path" value="/Spring-mvc-validate-RequestBody/target/classes"/>
+        <property name="context-root" value="Spring-mvc-validate-RequestBody"/>
+    </wb-module>
+</project-modules>

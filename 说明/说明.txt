@@ -1,0 +1,9 @@
+1.本框架是纯净的框架,里面无任何逻辑。spring+springmvc+mybatis。目的只是为了每次学习新框架时不用再重新搭框架，复制粘贴即可，依赖的jar包自己在pom.xml里添加。
+2.controller层路径是com.cloudeport.controller。每个controller需要继承BaseController.
+  model层：mybatis表映射文件在com.cloudeport.mapping
+           vo在com.cloudeport.pojo
+  service层是com.cloudeport.service
+  doa层是com.cloudeport.dao.每个dao接口只要继承IDao即可（如果无其它特殊逻辑）
+3.把test.sql在mysql数据库里运行，创建一张test表。
+4.测试URL：http://localhost:8182/PureMvn/test/getTestInfoByPk?pk=1
+5.mapping下的xml和pojo下面vo以及mybatis的sqlMapClient.xml我会提供一个工具，基本上不用自己再写持久层，除非特殊情况。

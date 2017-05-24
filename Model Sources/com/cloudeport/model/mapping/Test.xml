@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloudeport.dao.ITestDao">
+	<!--<typeAlias alias="test" type="com.cloudeport.model.pojo.Test"/> -->
+	<resultMap id="result" type="test">
+				    <result property="mId" column="mId"/>
+				    <result property="authTime" column="authTime"/>
+				    <result property="idCard" column="idCard"/>
+				    <result property="realName" column="realName"/>
+				    <result property="status" column="status"/>
+			</resultMap> 
+   
+   
+	<insert id="insert" parameterType="com.cloudeport.model.pojo.Test">
+			insert into test
+			( mId , authTime , idCard , realName , status )
+			values 
+			(  #{mId}# , #{authTime}# , #{idCard}# , #{realName}# , #{status}# )
+			<!--
+			<selectKey resultClass="com.cloudeport.model.pojo.Test">  
+				select * from test where id = LAST_INSERT_ID()
+			</selectKey>
+			-->
+	</insert>
+
+	<update id="update" parameterType="com.cloudeport.model.pojo.Test">
+		UPDATE test SET 
+						     mId = #{mId} ,
+				     authTime = #{authTime} ,
+				     idCard = #{idCard} ,
+				     realName = #{realName} ,
+				     status = #{status} 
+				WHERE 1=1  and mId=#{mId}    ;
+	</update>   
+
+	<delete id="delete">
+		delete from test where 1=1
+				and mId=#{mId} 
+			</delete>
+
+	<select id="getByPk" resultMap="result">
+		select * from test where 1=1
+				and mId=#{mId} 
+			</select> 
+    
+    <select id="getListByCondition" 
+		parameterType="java.util.Map" resultMap="result">
+		select * from test ${condition}
+	</select>
+	
+	<select id="getObjectByCondition" 
+		parameterType="java.util.Map" resultType="com.cloudeport.model.pojo.Test">
+		select * from test ${condition}
+	</select>
+</mapper>
